@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen - 创意开发者</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- 鼠标跟随光晕 -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Alex</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link active" data-section="hero">首页</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">关于</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">技能</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">作品</a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">经历</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">联系</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 首屏 -->
+    <section class="hero" id="hero">
+        <canvas class="hero-particles" id="particleCanvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-avatar-wrapper reveal">
+                <div class="avatar-glow"></div>
+                <div class="hero-avatar">
+                    <div class="avatar-placeholder">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-text">
+                <p class="hero-greeting reveal reveal-delay-1">你好，我是</p>
+                <h1 class="hero-name reveal reveal-delay-2">Alex Chen</h1>
+                <div class="hero-title reveal reveal-delay-3">
+                    <span class="title-prefix">一名</span>
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+                <p class="hero-description reveal reveal-delay-4">
+                    热爱用代码创造美好体验，专注于构建优雅、高性能的 Web 应用。
+                </p>
+                <div class="hero-cta reveal reveal-delay-5">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>查看作品</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>联系我</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>向下滚动</span>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">&lt;关于我&gt;</span>
+                <h2 class="section-title">了解我</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <div class="about-image-wrapper">
+                        <div class="about-image-placeholder">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div class="about-image-decoration"></div>
+                    </div>
+                </div>
+                <div class="about-content reveal reveal-delay-1">
+                    <h3 class="about-subtitle">创意开发者 & 设计爱好者</h3>
+                    <p class="about-text">
+                        我是一名充满热情的全栈开发者，拥有多年的 Web 开发经验。我热衷于将创意转化为优雅的数字体验，
+                        追求代码的简洁与设计的美感并存。
+                    </p>
+                    <p class="about-text">
+                        在工作中，我注重用户体验和代码质量，善于使用现代前端技术栈构建响应式、高性能的应用。
+                        业余时间，我喜欢探索新技术、参与开源项目，并在技术社区分享我的经验。
+                    </p>
+                    <div class="about-info-grid">
+                        <div class="about-info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>中国 · 上海</span>
+                        </div>
+                        <div class="about-info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>alex@example.com</span>
+                        </div>
+                        <div class="about-info-item">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span>开放合作机会</span>
+                        </div>
+                        <div class="about-info-item">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>计算机科学学士</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">年开发经验</div>
+                </div>
+                <div class="stat-card reveal reveal-delay-1">
+                    <div class="stat-number" data-target="30">0</div>
+                    <div class="stat-label">完成项目</div>
+                </div>
+                <div class="stat-card reveal reveal-delay-2">
+                    <div class="stat-number" data-target="1200">0</div>
+                    <div class="stat-label">GitHub Stars</div>
+                </div>
+                <div class="stat-card reveal reveal-delay-3">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">开源贡献</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能展示 -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">&lt;技能&gt;</span>
+                <h2 class="section-title">技术栈</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- 前端 -->
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h3>前端开发</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-css3-alt"></i>
+                                <span>CSS3 / Sass</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-vuejs"></i>
+                                <span>Vue.js</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 后端 -->
+                <div class="skill-category reveal reveal-delay-1">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3>后端开发</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="87"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-solid fa-database"></i>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="78"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-solid fa-cloud"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>GraphQL</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="72"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 工具 -->
+                <div class="skill-category reveal reveal-delay-2">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h3>工具 & 其他</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-figma"></i>
+                                <span>Figma</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="82"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-solid fa-terminal"></i>
+                                <span>Linux / Shell</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-brands fa-aws"></i>
+                                <span>AWS</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fa-solid fa-vial"></i>
+                                <span>Testing</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="78"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目作品 -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">&lt;作品&gt;</span>
+                <h2 class="section-title">精选项目</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="project-filters reveal">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="frontend">前端</button>
+                <button class="filter-btn" data-filter="fullstack">全栈</button>
+                <button class="filter-btn" data-filter="design">设计</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal" data-category="frontend">
+                    <div class="project-image">
+                        <div class="project-image-placeholder" style="--hue: 250;">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" title="查看项目"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" class="project-link" title="源代码"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">数据可视化仪表盘</h3>
+                        <p class="project-desc">一个交互式数据可视化平台，支持实时数据流、自定义图表和拖拽布局。</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">D3.js</span>
+                            <span class="tag">WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal reveal-delay-1" data-category="fullstack">
+                    <div class="project-image">
+                        <div class="project-image-placeholder" style="--hue: 170;">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" title="查看项目"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" class="project-link" title="源代码"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">实时协作平台</h3>
+                        <p class="project-desc">支持多人实时编辑的在线协作工具，包含文档编辑、白板和视频通话功能。</p>
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Socket.io</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal reveal-delay-2" data-category="design">
+                    <div class="project-image">
+                        <div class="project-image-placeholder" style="--hue: 320;">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" title="查看项目"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" class="project-link" title="源代码"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">AI 创意生成器</h3>
+                        <p class="project-desc">基于 AI 的创意设计工具，可以根据文字描述自动生成 UI 组件和配色方案。</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">OpenAI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal" data-category="frontend">
+                    <div class="project-image">
+                        <div class="project-image-placeholder" style="--hue: 40;">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" title="查看项目"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" class="project-link" title="源代码"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">音乐播放器</h3>
+                        <p class="project-desc">一个精美的在线音乐播放器，支持歌词同步、频谱可视化和播放列表管理。</p>
+                        <div class="project-tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Web Audio</span>
+                            <span class="tag">Canvas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal reveal-delay-1" data-category="fullstack">
+                    <div class="project-image">
+                        <div class="project-image-placeholder" style="--hue: 200;">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" title="查看项目"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" class="project-link" title="源代码"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">电商微服务平台</h3>
+                        <p class="project-desc">基于微服务架构的电商平台，包含商品管理、订单系统和支付集成。</p>
+                        <div class="project-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Redis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal reveal-delay-2" data-category="design">
+                    <div class="project-image">
+                        <div class="project-image-placeholder" style="--hue: 280;">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" title="查看项目"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" class="project-link" title="源代码"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">3D 产品展示</h3>
+                        <p class="project-desc">使用 Three.js 构建的 3D 产品展示页面，支持 360° 旋转和交互式动画。</p>
+                        <div class="project-tags">
+                            <span class="tag">Three.js</span>
+                            <span class="tag">GLSL</span>
+                            <span class="tag">Blender</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 时间线经历 -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">&lt;经历&gt;</span>
+                <h2 class="section-title">我的旅程</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal" data-side="right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 至今</div>
+                        <h3 class="timeline-title">高级前端工程师</h3>
+                        <div class="timeline-company">
+                            <i class="fa-solid fa-building"></i>
+                            <span>某科技公司</span>
+                        </div>
+                        <p class="timeline-desc">负责核心产品的前端架构设计与开发，带领团队完成多个重要项目的技术升级。</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-side="left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - 2023</div>
+                        <h3 class="timeline-title">全栈开发工程师</h3>
+                        <div class="timeline-company">
+                            <i class="fa-solid fa-rocket"></i>
+                            <span>创业公司</span>
+                        </div>
+                        <p class="timeline-desc">从零到一搭建产品技术栈，独立完成前后端开发，产品服务超过 10 万用户。</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-side="right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 - 2021</div>
+                        <h3 class="timeline-title">前端开发工程师</h3>
+                        <div class="timeline-company">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>互联网公司</span>
+                        </div>
+                        <p class="timeline-desc">参与多个 B 端和 C 端项目开发，积累了丰富的前端工程化和性能优化经验。</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-side="left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2015 - 2019</div>
+                        <h3 class="timeline-title">计算机科学 学士</h3>
+                        <div class="timeline-company">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>某大学</span>
+                        </div>
+                        <p class="timeline-desc">系统学习计算机基础知识，在校期间参与多个开源项目，获得优秀毕业生称号。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">&lt;联系&gt;</span>
+                <h2 class="section-title">与我联系</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <p class="contact-text reveal">
+                    无论是项目合作、技术交流还是随便聊聊，都欢迎联系我！
+                </p>
+                <div class="contact-cards">
+                    <a href="mailto:alex@example.com" class="contact-card reveal">
+                        <div class="contact-card-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h3>邮箱</h3>
+                        <p>alex@example.com</p>
+                    </a>
+                    <a href="#" class="contact-card reveal reveal-delay-1">
+                        <div class="contact-card-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>github.com/alexchen</p>
+                    </a>
+                    <a href="#" class="contact-card reveal reveal-delay-2">
+                        <div class="contact-card-icon">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <h3>Twitter</h3>
+                        <p>@alexchen_dev</p>
+                    </a>
+                    <a href="#" class="contact-card reveal reveal-delay-3">
+                        <div class="contact-card-icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/alexchen</p>
+                    </a>
+                </div>
+                <a href="mailto:alex@example.com" class="btn btn-primary btn-large reveal">
+                    <span>发送邮件</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">Alex</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:alex@example.com" class="social-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <p class="footer-text">
+                    用 <i class="fa-solid fa-heart"></i> 和 <i class="fa-solid fa-code"></i> 构建 &copy; 2026 Alex Chen
+                </p>
+            </div>
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
